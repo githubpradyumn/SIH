@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Multi-Developer Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .developer {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+        }
+        .developer:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+        }
+        .developer img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+        .developer:hover img {
+            transform: scale(1.1);
+        }
+        .developer-details {
+            margin-top: 15px;
+        }
+        .developer-details h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+        .developer:hover .developer-details h2 {
+            color: #009688;
+        }
+        .developer-details p {
+            margin: 10px 0;
+            color: #666;
+            font-size: 16px;
+        }
+        .developer-details a {
+            color: #009688;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+            font-size: 14px;
+        }
+        .developer-details a:hover {
+            color: #005f57;
+            text-decoration: underline;
+        }
+        /* Tooltip styles */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the text */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Developer 1 -->
+        <div class="developer">
+            <img src="image01.jpg" alt="Developer 1">
+            <div class="developer-details">
+                <h2>Krishna Ketan Rai</h2>
+                <p>To be noted.</p>
+                <p><a href="https://github.com/krikera" target="_blank" class="tooltip">GitHub Profile<span class="tooltiptext">View GitHub</span></a> | <a href="https://linkedin.com/in/janedoe" target="_blank" class="tooltip">LinkedIn<span class="tooltiptext">View LinkedIn</span></a></p>
+            </div>
+        </div>
+
+        <!-- Developer 2 -->
+        <div class="developer">
+            <img src="image02.jpg" alt="Developer 2">
+            <div class="developer-details">
+                <h2>Deepak Maurya</h2>
+                <p>Full Stack Developer with experience in Node.js, React, and MongoDB.</p>
+                <p><a href="https://github.com/deepakmaur" target="_blank" class="tooltip">GitHub Profile<span class="tooltiptext">View GitHub</span></a> | <a href="https://linkedin.com/in/johnsmith" target="_blank" class="tooltip">LinkedIn<span class="tooltiptext">View LinkedIn</span></a></p>
+            </div>
+        </div>
+
+        <!-- Developer 3 -->
+        <div class="developer">
+            <img src="image03.jpg" alt="Developer 3">
+            <div class="developer-details">
+                <h2>Gaurav Bhatt</h2>
+                <p>Backend Developer with expertise in Python, Django, and REST APIs.</p>
+                <p><a href="https://github.com/golubhattuk01" target="_blank" class="tooltip">GitHub Profile<span class="tooltiptext">View GitHub</span></a> | <a href="https://linkedin.com/in/sarahjohnson" target="_blank" class="tooltip">LinkedIn<span class="tooltiptext">View LinkedIn</span></a></p>
+            </div>
+        </div>
+
+        <!-- Developer 4 -->
+        <div class="developer">
+            <img src="image04.jpg" alt="Developer 4">
+            <div class="developer-details">
+                <h2>Aniket Bhati</h2>
+                <p>Mobile Developer with a passion for Flutter and Android development.</p>
+                <p><a href="https://github.com/akb2102" target="_blank" class="tooltip">GitHub Profile<span class="tooltiptext">View GitHub</span></a> | <a href="https://linkedin.com/in/alexbrown" target="_blank" class="tooltip">LinkedIn<span class="tooltiptext">View LinkedIn</span></a></p>
+            </div>
+        </div>
+
+        <!-- Developer 5 -->
+        <div class="developer">
+            <img src="image05.jpeg" alt="Developer 5">
+            <div class="developer-details">
+                <h2>Shreya Singh</h2>
+                <p>Data Scientist specializing in Machine Learning and Data Visualization.</p>
+                <p><a href="https://github.com/shreya23094" target="_blank" class="tooltip">GitHub Profile<span class="tooltiptext">View GitHub</span></a> | <a href="https://linkedin.com/in/emilywhite" target="_blank" class="tooltip">LinkedIn<span class="tooltiptext">View LinkedIn</span></a></p>
+            </div>
+        </div>
+
+        <!-- Developer 6 -->
+        <div class="developer">
+            <img src="image06.jpg" alt="Developer 6">
+            <div class="developer-details">
+                <h2>Pradyumn Pratap Singh</h2>
+                <p>DevOps Engineer with experience in cloud infrastructure and CI/CD pipelines.</p>
+                <p><a href="https://github.com/githubpradyumn" target="_blank" class="tooltip">GitHub Profile<span class="tooltiptext">View GitHub</span></a> | <a href="https://linkedin.com/in/michaelgreen" target="_blank" class="tooltip">LinkedIn<span class="tooltiptext">View LinkedIn</span></a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
